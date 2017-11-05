@@ -25,18 +25,23 @@ of solc, the following steps are required:
 3. Within each of the three `solc` directories defined above, place appropriate
    binaries. The binaries ideally will be self-contained statically linked
    compilatins of the solidity compiler, but if shared libraries or other resources
-   are required, these may be bundled alongside the binaries in the same directory.
-   *The compiler binaries themselves must be called `solc` or `solc.exe`.
+   are required, these may be bundled alongside the binaries in the same directory
+   or subdirectories, if the binary will link them by relative path.
+   *The compiler binaries themselves must be called `solc` or `solc.exe`.*
 4. Once the binaries are available, to build the jar file, it's just
    ```
    $ sbt package
    ```
    You will find the jar file in th target directory.
 
+The project may contain binaries for multiple versions of `solc`.
+Which version is bundled into the jar files produced depends on the
+version setting in `build.sbt`.
+
 This project includes binaries from [solc](https://github.com/ethereum/solidity)
 and is indebted to [solcJ](https://github.com/ether-camp/solcJ).
 
-It is licensed under GPLv3.
+It is licensed under GPLv3, after the solidity compiler itself.
 
    
    
