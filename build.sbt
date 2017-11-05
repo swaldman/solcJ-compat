@@ -45,11 +45,11 @@ generateSolcJResources in Compile := {
   val (destMac, destWin, destLinux ) = macWinLinux( genResourcesDir, true )
 
   val copiedFiles = forceCopyContents( specificVersionDir, genResourcesDir )
-  writeFileList(   srcMac,   destMac )
-  writeFileList(   srcWin,   destWin )
-  writeFileList( srcLinux, destLinux )
+  val macFileList = writeFileList(   srcMac,   destMac )
+  val winFileList = writeFileList(   srcWin,   destWin )
+  val linFileList = writeFileList( srcLinux, destLinux )
 
-  copiedFiles :+ destMac :+ destWin :+ destLinux
+  copiedFiles :+ macFileList :+ winFileList :+ linFileList
 }
 
 resourceGenerators in Compile += (generateSolcJResources in Compile).taskValue
@@ -142,10 +142,11 @@ def fileListAsSeq( prefixFile : File ) : Seq[String] = {
   ( prefixFile ** "*" ).get.filterNot( _.isDirectory ).map( _.getAbsolutePath ).map( _.drop( npfLen ) )
 }
 
-def writeFileList( origParentDir : File, newParentDir : File ) : Unit = {
+def writeFileList( origParentDir : File, newParentDir : File ) : File = {
   val outFile = new File( newParentDir, "file.list" )
   val pw = new PrintWriter( new OutputStreamWriter( new BufferedOutputStream( new FileOutputStream( outFile ) ), UTF8.charSet ) )
   try fileListAsSeq( origParentDir ).foreach( pw.println ) finally pw.close()
+  outFile
 }
 
 def forceCopyContents( origParentDir : File, newParentDir : File ) : Seq[File] = {
