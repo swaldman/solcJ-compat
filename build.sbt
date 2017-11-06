@@ -63,7 +63,7 @@ generateVersionClass in Compile := {
         |// modified from https://github.com/ether-camp/solcJ/blob/756e630daf7dcb7d04c31afd0331eea7dcc05615/src/main/java/org/ethereum/solcJ/SolcVersion.java
         |
         |/**
-        | * Created by Stan Reshetnyk on 31.10.16.
+        | * Generated ${ new java.util.Date() }
         | */
         |public class SolcVersion {
         |
