@@ -12,7 +12,7 @@ organization := "com.mchange"
 
 name := "solcJ-compat"
 
-version := "0.4.18rev1-SNAPSHOT"
+version := "0.4.18rev1"
 
 autoScalaLibrary := false // this is a pure Java library, don't depend on Scala
 
