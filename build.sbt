@@ -10,7 +10,7 @@ import scala.io.Codec.UTF8
 
 organization := "com.mchange"
 
-name := "solcJ-compat"
+name := "solcj-compat"
 
 version := "0.4.18rev1"
 
@@ -54,7 +54,7 @@ generateSolcJResources in Compile := {
 
 resourceGenerators in Compile += (generateSolcJResources in Compile).taskValue
 
-generateVersionClass in Compile := {
+generateVersionClass in Compile := { // we keep the capital J here to remain compatible with original solcJ artifacts
   val sm  = (sourceManaged in Compile).value
   val nsv = noSuffixVersion.value
   val gensrc = {
@@ -122,7 +122,7 @@ val noSuffixVersion = settingKey[String]("The version without any trailing 'snap
 
 val versionsDir = settingKey[File]("Directory where different-version binaries are kept.")
 
-val generateSolcJResources = taskKey[Seq[File]]("Generates the resources that become included in the solcJ-compat jar.")
+val generateSolcJResources = taskKey[Seq[File]]("Generates the resources that become included in the solcj-compat jar.")
 
 val generateVersionClass = taskKey[Seq[File]]("Generates the class that reports the solidty compiler (no-suffix) version in a JVM accessible way.")
 

@@ -1,4 +1,4 @@
-# solcJ-compat
+# solcj-compat
 
 This is a project that means to generate "fat jar" files containing
 self-contained compiler binaries for [solc](https://github.com/ethereum/solidity) under Mac, Windows, and Linux,
@@ -36,14 +36,14 @@ of solc, the following steps are required:
    ```
    $ sbt package
    ```
-   You will find the jar file in th target directory.
+   You will find the jar file in the target directory.
 
 The project may contain binaries for multiple versions of `solc`.
 Which version is bundled into the jar files produced depends on the
 version setting in `build.sbt`.
 
 This project includes binaries from [solc](https://github.com/ethereum/solidity)
-and is indebted to [solcJ](https://github.com/ether-camp/solcJ).
+and is indebted to the original [solcJ](https://github.com/ether-camp/solcJ) project.
 
 It is licensed under GPLv3, after the solidity compiler itself.
 
