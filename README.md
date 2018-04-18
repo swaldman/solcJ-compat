@@ -47,11 +47,11 @@ and is indebted to the original [solcJ](https://github.com/ether-camp/solcJ) pro
 
 It is licensed under GPLv3, after the solidity compiler itself.
 
-**Note:** * When building solc from a release build, `touch prerelease.txt` at
+**Note:** *When building solc from a release build, `touch prerelease.txt` at
 the top-level of the solidity distribution so that the build is not flagged as
 a development build (and does not emit annoying warnings about being a
 prerelease version. See
-https://ethereum.stackexchange.com/questions/25584/how-to-compile-solidity-release-version/25593#25593 *
+[https://ethereum.stackexchange.com/questions/25584/how-to-compile-solidity-release-version/25593#25593](https://ethereum.stackexchange.com/questions/25584/how-to-compile-solidity-release-version/25593#25593)*
 
    
    
