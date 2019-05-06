@@ -15,8 +15,8 @@ of solc, the following steps are required:
 
 1. Reset the version in `build.sbt` to a version number beginning
    with the base version of `solc` you wish to bundle. Any non-numeric
-   suffix is acceptible. For example, if you wish to bundle
-   `solc` version `0.4.18+commit.9cf6e910.Darwin.appleclang`, acceptible
+   suffix is acceptable. For example, if you wish to bundle
+   `solc` version `0.4.18+commit.9cf6e910.Darwin.appleclang`, acceptable
    versions in `build.sbt` would be `0.4.18`, `0.4.18rev1`, `0.4.18-SNAPSHOT`,
    etc. at your discretion. Only the dot-separated base semantic version,
    `0.4.18` in this case, is used by the project
